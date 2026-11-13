@@ -1,0 +1,1 @@
+document.createTextNodeで文字のノードを作り、要素へ追加する。

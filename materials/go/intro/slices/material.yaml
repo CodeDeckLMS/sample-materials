@@ -1,0 +1,5 @@
+id: "sample-go-slices"
+title: "05 スライス：隣り合う値を比べる"
+order: 5
+published: true
+codeExecutionEnabled: true

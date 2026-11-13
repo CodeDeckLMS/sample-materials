@@ -1,0 +1,50 @@
+<Callout kind="info" title="実習の進め方">
+
+結果を予想し、動かして確かめ、違いの理由を説明しましょう。合成の教材です。
+
+</Callout>
+
+## この教材の目標
+
+labelを持つ入力欄を作り、入力された文字をHTMLとして実行せず表示します。目安は35分です。
+
+### 入力欄に名前を付ける
+
+labelのforとinputのidを対応させると、ラベルを押して入力欄へ移動でき、読み上げでも名前を伝えられます。placeholderは入力中に消えるため、ラベルの代わりにはなりません。
+formのsubmitを扱えば、ボタンを押す場合だけでなく、入力欄でEnterを押す場合も同じ処理へまとめられます。例はページ内の練習で、サーバーへ送信しないためpreventDefaultを使います。
+
+### 文字列とHTMLを分ける
+
+入力をtextContentへ入れると、タグのような文字も文字列として表示します。ユーザーの入力をそのままinnerHTMLへ入れると、意図しない要素や処理をページへ混ぜる危険があります。
+ブラウザーでrequiredや長さを確認しても、実際のサービスではサーバー側の検査と認可が別に必要です。今回は本物の個人情報を入力しないでください。
+
+### 例を読み、結果を予想する
+
+~~~html
+<form id="greeting">
+  <label for="nickname">ニックネーム</label>
+  <input id="nickname" required maxlength="30">
+  <button>表示する</button>
+</form>
+<p id="result" aria-live="polite"></p>
+<script>
+document.querySelector("#greeting").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const nickname = document.querySelector("#nickname").value;
+  document.querySelector("#result").textContent = nickname;
+});
+</script>
+~~~
+
+## 手を動かして確かめる
+
+1. 例をローカルファイルへ保存し、ラベルを押して入力へ移動します。
+2. 合成のニックネームを入力し、Enterで表示を更新します。
+3. タグのような文字列を入力しても、文字として表示されるか確認します。
+4. 空欄で送信したときの案内を確認し、キーボードだけでも試します。
+
+## 振り返り
+
+ブラウザーのrequiredだけでは、実際のサービスの入力検査として不十分なのはなぜでしょうか。
+
+今日のゴールと比べ、できたことと、次に試すことを自分の言葉で記録しましょう。

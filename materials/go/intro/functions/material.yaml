@@ -1,0 +1,5 @@
+id: "sample-go-functions"
+title: "06 関数とエラー：計算できない場合を返す"
+order: 6
+published: true
+codeExecutionEnabled: true

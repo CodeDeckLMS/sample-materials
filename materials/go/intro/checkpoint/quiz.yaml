@@ -1,0 +1,4 @@
+type: "true_false"
+choices: [{"id": "true", "file": "choices/true.md"}, {"id": "false", "file": "choices/false.md"}]
+correct: ["true"]
+explanation: "explanation.md"

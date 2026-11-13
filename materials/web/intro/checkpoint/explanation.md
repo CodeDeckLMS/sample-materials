@@ -1,0 +1,1 @@
+textContentとcreateTextNodeは入力をテキストとして扱います。未検証の入力をinnerHTMLへ渡す方法は選びません。サーバー側の認可・入力検査も別に必要です。

@@ -1,0 +1,45 @@
+<Callout kind="info" title="実習の進め方">
+
+結果を予想し、動かして確かめ、違いの理由を説明しましょう。合成の教材です。
+
+</Callout>
+
+## この教材の目標
+
+content、padding、border、marginの違いを調べます。目安は30分です。
+
+### 要素は箱として配置される
+
+内容の領域をcontent、その内側の余白をpadding、枠線をborder、隣との間隔をmarginと呼びます。余白を全部同じものとして扱うと、背景色や枠線の位置が予想と違ってしまいます。
+初期のcontent-boxでは、widthの外へpaddingとborderが追加されます。例のwidth 240px、padding 16px、border 2pxなら、箱の横幅は276pxです。marginはさらに外側にあります。
+
+### 狭い画面でも読めるようにする
+
+box-sizing: border-boxではwidthにpaddingとborderを含めます。max-width: 100%と組み合わせ、親からはみ出さないか確認しましょう。
+固定した高さへ文章を押し込むと、文字拡大時に切れることがあります。高さを内容に合わせ、ブラウザーを狭くした場合も実際に確認します。
+
+### 例を読み、結果を予想する
+
+~~~css
+.card {
+  box-sizing: border-box;
+  width: 240px;
+  max-width: 100%;
+  padding: 16px;
+  border: 2px solid navy;
+  margin: 12px 0;
+}
+~~~
+
+## 手を動かして確かめる
+
+1. HTMLの段落へcardクラスを付け、例のCSSを適用します。
+2. 開発者ツールでcontent・padding・borderの位置を確認します。
+3. border-boxを外した場合と比較して、横幅を計算します。
+4. 画面幅320px、文字200%で文章が切れないか確かめます。
+
+## 振り返り
+
+paddingとmarginを入れ替えると、背景色の付く範囲はどう変わるでしょうか。
+
+今日のゴールと比べ、できたことと、次に試すことを自分の言葉で記録しましょう。

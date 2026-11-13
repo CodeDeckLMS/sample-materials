@@ -1,0 +1,4 @@
+type: "multiple"
+choices: [{"id": "text", "file": "choices/text.md"}, {"id": "node", "file": "choices/node.md"}, {"id": "html", "file": "choices/html.md"}]
+correct: ["text", "node"]
+explanation: "explanation.md"

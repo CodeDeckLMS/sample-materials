@@ -1,0 +1,47 @@
+<Callout kind="info" title="実習の進め方">
+
+結果を予想し、動かして確かめ、違いの理由を説明しましょう。合成の教材です。
+
+</Callout>
+
+## この教材の目標
+
+イベントを受け取り、ページの数値表示を更新します。目安は35分です。
+
+### 操作があったときに処理する
+
+addEventListenerでclickイベントを登録すると、ボタンが操作されたときに関数が呼ばれます。コードを読むときは、登録時に動く処理と、クリック後に動く処理を分けます。
+countはスクリプト内の値で、outputは画面上の要素です。変数を増やすだけでは表示は更新されません。textContentで画面の内容も変更します。
+
+### buttonを使う理由
+
+divへclickだけを付けると、Tabで選んだりEnterで押したりする操作が不足しがちです。buttonには標準のキーボード操作があるため、意味に合う要素を使うことがアクセシビリティにもつながります。
+この実験はローカルのHTMLファイルで行います。教材内のHTMLプレビューは静的表示であり、JavaScriptの実行場所ではありません。
+
+### 例を読み、結果を予想する
+
+~~~html
+<button type="button" id="add">1増やす</button>
+<output id="count" aria-live="polite">0</output>
+<script>
+let count = 0;
+const output = document.querySelector("#count");
+document.querySelector("#add").addEventListener("click", () => {
+  count += 1;
+  output.textContent = String(count);
+});
+</script>
+~~~
+
+## 手を動かして確かめる
+
+1. buttonとoutputをHTMLへ置き、その後ろのscript要素へ例を書きます。
+2. マウスで3回押し、表示が3になることを確認します。
+3. Tabでボタンへ移動し、EnterやSpaceでも操作してみます。
+4. 0へ戻すボタンを追加し、変数と画面の両方を更新してください。
+
+## 振り返り
+
+変数の値を変えたのに画面が変わらない場合、どの行が不足していると考えられますか。
+
+今日のゴールと比べ、できたことと、次に試すことを自分の言葉で記録しましょう。

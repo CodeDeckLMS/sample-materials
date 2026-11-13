@@ -1,0 +1,4 @@
+type: "single"
+choices: [{"id": "first", "file": "choices/first.md"}, {"id": "second", "file": "choices/second.md"}, {"id": "third", "file": "choices/third.md"}]
+correct: ["first"]
+explanation: "explanation.md"
